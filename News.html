@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://kit.fontawesome.com/a4d3dc0ded.js" crossorigin="anonymous"></script>
+    <link href="./vendors/slicebox/css/demo.css" rel="stylesheet" type="text/css">
+    <!--
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="./vendors/slicebox/js/modernizr.custom.46884.js"></script>
+    <script src="./vendors/slicebox/js/jquery.slicebox.min.js"></script>
+    <link rel="shortcut icon" href="./title icon/favicon-20200202050352174.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!--
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name">
+    -->
+    <script type="text/javascript" src="./vendors/tiltedpage_scroll-master/jquery.tiltedpage-scroll.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".main").tiltedpage_scroll({
+                angle: 20
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+    <script src="https://cdn.rawgit.com/chieffancypants/angular-hotkeys/master/build/hotkeys.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-animate.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./aphrodite_css/Aphrodite.css">
+    <script src="./vendors/tiltedpage_scroll-master/jquery.tiltedpage-scroll.min.js"></script>
+    <title>Aphrodite</title>
+</head>
+
+<body class="background-1">
+    <header>
+        <nav class="logo_nav">
+            <a href="Aphrodite.html" target="_self">
+                <img class="logo1" src="./aphrodite_img/whitelogo3-1.png">
+            </a>
+            <ul class="nav_list">
+                <li>
+                    <a href="#" target="_self">
+                        <span class="icon icon-file"></span>
+                        <span class="text_1">ABOUT US</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Events.html" target="_self">
+                        <span class="icon icon-file"></span>
+                        <span class="text_2">EVENTS</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="longA" href="Timeline_of_arts.html" target="_self">
+                        <span class="icon icon-file"></span>
+                        <span class="text_3">TIME LINE OF ART HISTORY</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_self">
+                        <span class="icon icon-file"></span>
+                        <span class="text_4">NEWS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_self">
+                        <span class="icon icon-file"></span>
+                        <span class="text_5">SHOP
+                            &rarr;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="language_list">
+            <li>
+                <a href="#" target="_self">EN</a>
+            </li>
+            <li>
+                <a href="#" target="_self">JP</a>
+            </li>
+            <li>
+                <a href="#" target="_self">中</a>
+            </li>
+        </ul>
+        <div class="search-box">
+            <input class="search-text" name="" placeholder="Type To Search">
+            <a class="search-btn" href="#">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+        </div>
+    </header>
+    <div class="news-body-head">
+        <ul class="news-breadcrumbs-head">
+            <li class="breadcrumbs＿item">
+                <a href="#" class="breadcrumbs-item-home-link">HOME</a>
+            </li>
+            <li class="breadcrumbs＿item">
+                <a href="#" class="breadcrumbs-item-events-link">NEWS</a>
+            </li>
+        </ul>
+
+
+        <div class="news-head-carsoul">
+            <div ng-app='app' ng-controller='MainController'>
+                <div id='main'>
+                    <section id='one'>
+                        <div class='pane' ng-repeat='forest in forests track by $index' ng-if="$index == active">
+                            <div id='main'>
+                                <h1 class="news-carsoul-title"
+                                    ng-style="{'background-image' : 'url(' + forest.img + ')'}">{{ forest.rank }}</h1>
+                            </div>
+                            <div class="bg" ng-style="{'background-image' : 'url(' + forest.img + ')'}"></div>
+                        </div>
+                    </section>
+                    <section id='two'>
+                        <div class='pane' ng-repeat='forest in forests track by $index'
+                            ng-class="{ 'active' : $index == active }" ng-if="$index == active">
+                            <div id='main2'>
+                                <h2 class="news-carsoul-container-title">{{ forest.name }}</h2>
+                                <p class="news-carsoul-container-text1">{{ forest.desc }}</p>
+                                <p class='sub'>{{ forest.location }}</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <nav id='nav'>
+                    <ul>
+                        <li class="previous" ng-show="active > 0">
+                            <a href='#' ng-click="previous()">
+                                <span class='icon icon_arrow-left'></span>
+                            </a>
+                        </li>
+                        <li class='numbers'>
+                            <a href='#' ng-repeat="forest in forests track by $index" ng-click="setActive($index)"
+                                ng-class="{'active' : $index == active}">
+                                {{ $index + 1 }}
+                            </a>
+                        </li>
+                        <li class="next" ng-show="active + 1 < forests.length">
+                            <a href='#' ng-click="next()">
+                                <span class='icon icon_arrow-right'></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="preloader">
+                    <img src="./aphrodite_img/news/carsoul1/ia_100000003170.jpg" alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130891/sequoia.jpg" alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130891/redwoods.jpg" alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130891/black-forest.jpg" alt="" />
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130891/crooked-forest.jpg" alt="" />
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--<div class="news-body-head-title">
+            <h1 class="news-head-text">“OUTSTANDING, INTELLIGENT AND FUN”</h1>
+        </div>-->
+
+        <div class="horizontal_line-news-1"></div>
+        <div class="news-head-navlist">
+            <!--<ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                <li><a href="#tab1" class="active1">All Topics</a></li>
+                <li><a href="#tab2" class="active2">Data published</a></li>
+                <li><a href="#tab3" class="active3">Sort by</a></li>
+            </ul>-->
+            <ul class="nav nav-pills clearfix" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link news-head-navlist active" id="pills-home-tab" data-toggle="pill"
+                        href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">All Topics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link news-head-navlist" id="pills-profile-tab" data-toggle="pill"
+                        href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Data
+                        published</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link news-head-navlist" id="pills-contact-tab" data-toggle="pill"
+                        href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Sort by</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="news-body-container">
+                        <div class="linkgrid">
+                            <a href="Exhibations.html"></a>
+                            <div class="grid-item grid-item-height-1">
+                                <div class="blog-card spring-fever">
+                                    <div class="title-content">
+                                        <h3>SPRING FEVER</h3>
+                                        <hr />
+                                        <div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div>
+                                    </div><!-- /.title-content -->
+                                    <div class="utility-info">
+                                        <ul class="utility-list">
+                                            <li class="comments">12</li>
+                                            <li class="date">03.12.2015</li>
+                                        </ul>
+                                    </div><!-- /.utility-info -->
+                                    <!-- overlays -->
+                                    <div class="gradient-overlay"></div>
+                                    <div class="color-overlay"></div>
+                                </div><!-- /.blog-card -->
+                            </div>
+                            </a>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">
+                                    <div class="example-2 card">
+                                        <div class="wrapper" id="card4">
+                                            <div class="header">
+                                                <div class="date">
+                                                    <span class="day">12</span>
+                                                    <span class="month">Aug</span>
+                                                    <span class="year">2016</span>
+                                                </div>
+                                                <ul class="menu-content">
+                                                    <li>
+                                                        <a href="#" class="fa fa-bookmark-o"></a>
+                                                    </li>
+                                                    <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                    <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="data">
+                                                <div class="content">
+                                                    <span class="author">Jane Doe</span>
+                                                    <h1 class="title"><a href="Exhibations.html">Stranger Things: The
+                                                            sound of the
+                                                            Upside Down</a></h1>
+                                                    <p class="text">The antsy bingers of Netflix will eagerly anticipate
+                                                        the digital release of the
+                                                        Survive soundtrack, out today.</p>
+                                                    <a href="#" class="button">Read more</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">
+                                    <div class="example-1 card">
+                                        <div class="wrapper" id="card3">
+                                            <div class="date">
+                                                <span class="day">12</span>
+                                                <span class="month">Aug</span>
+                                                <span class="year">2016</span>
+                                            </div>
+                                            <div class="data">
+                                                <div class="content" id="card3text">
+                                                    <span class="author">Jane Doe</span>
+                                                    <h1 class="title"><a href="#">Boxing icon has the will for a couple
+                                                            more fights</a></h1>
+                                                    <p class="text">The highly anticipated world championship fight will
+                                                        take place at 10am and is
+                                                        the second major boxing blockbuster in the nation after 43
+                                                        years.</p>
+                                                    <label for="show-menu" class="menu-button"><span></span></label>
+                                                </div>
+                                                <input type="checkbox" id="show-menu" />
+                                                <ul class="menu-content">
+                                                    <li>
+                                                        <a href="#" class="fa fa-bookmark-o"></a>
+                                                    </li>
+                                                    <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+                                                    <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">
+                                    <div class="example-2 card">
+                                        <div class="wrapper" id="card4">
+                                            <div class="header">
+                                                <div class="date">
+                                                    <span class="day">12</span>
+                                                    <span class="month">Aug</span>
+                                                    <span class="year">2016</span>
+                                                </div>
+                                                <ul class="menu-content">
+                                                    <li>
+                                                        <a href="#" class="fa fa-bookmark-o"></a>
+                                                    </li>
+                                                    <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                    <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="data">
+                                                <div class="content">
+                                                    <span class="author">Jane Doe</span>
+                                                    <h1 class="title"><a href="#">Stranger Things: The sound of the
+                                                            Upside Down</a></h1>
+                                                    <p class="text">The antsy bingers of Netflix will eagerly anticipate
+                                                        the digital release of the
+                                                        Survive soundtrack, out today.</p>
+                                                    <a href="#" class="button">Read more</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">
+                                    <div class="grid-item-inside">
+                                        <div class="example-2 card">
+                                            <div class="wrapper" id="card4">
+                                                <div class="header">
+                                                    <div class="date">
+                                                        <span class="day">12</span>
+                                                        <span class="month">Aug</span>
+                                                        <span class="year">2016</span>
+                                                    </div>
+                                                    <ul class="menu-content">
+                                                        <li>
+                                                            <a href="#" class="fa fa-bookmark-o"></a>
+                                                        </li>
+                                                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="data">
+                                                    <div class="content">
+                                                        <span class="author">Jane Doe</span>
+                                                        <h1 class="title"><a href="#">Stranger Things: The sound of the
+                                                                Upside Down</a></h1>
+                                                        <p class="text">The antsy bingers of Netflix will eagerly
+                                                            anticipate
+                                                            the digital release of the
+                                                            Survive soundtrack, out today.</p>
+                                                        <a href="#" class="button">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">
+                                    <div class="grid-item-inside">
+                                        <div class="example-2 card">
+                                            <div class="wrapper" id="card4">
+                                                <div class="header">
+                                                    <div class="date">
+                                                        <span class="day">12</span>
+                                                        <span class="month">Aug</span>
+                                                        <span class="year">2016</span>
+                                                    </div>
+                                                    <ul class="menu-content">
+                                                        <li>
+                                                            <a href="#" class="fa fa-bookmark-o"></a>
+                                                        </li>
+                                                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="data">
+                                                    <div class="content">
+                                                        <span class="author">Jane Doe</span>
+                                                        <h1 class="title"><a href="#">Stranger Things: The sound of the
+                                                                Upside Down</a></h1>
+                                                        <p class="text">The antsy bingers of Netflix will eagerly
+                                                            anticipate
+                                                            the digital release of the
+                                                            Survive soundtrack, out today.</p>
+                                                        <a href="#" class="button">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">
+                                    <div class="example-1 card">
+                                        <div class="wrapper" id="card3">
+                                            <div class="date">
+                                                <span class="day">12</span>
+                                                <span class="month">Aug</span>
+                                                <span class="year">2016</span>
+                                            </div>
+                                            <div class="data">
+                                                <div class="content" id="card3text">
+                                                    <span class="author">Jane Doe</span>
+                                                    <h1 class="title"><a href="#">Boxing icon has the will for a couple
+                                                            more fights</a></h1>
+                                                    <p class="text">The highly anticipated world championship fight will
+                                                        take place at 10am and is
+                                                        the second major boxing blockbuster in the nation after 43
+                                                        years.</p>
+                                                    <label for="show-menu" class="menu-button"><span></span></label>
+                                                </div>
+                                                <input type="checkbox" id="show-menu" />
+                                                <ul class="menu-content">
+                                                    <li>
+                                                        <a href="#" class="fa fa-bookmark-o"></a>
+                                                    </li>
+                                                    <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+                                                    <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">
+                                    <div class="grid-item-inside">
+                                        <div class="example-2 card">
+                                            <div class="wrapper" id="card4">
+                                                <div class="header">
+                                                    <div class="date">
+                                                        <span class="day">12</span>
+                                                        <span class="month">Aug</span>
+                                                        <span class="year">2016</span>
+                                                    </div>
+                                                    <ul class="menu-content">
+                                                        <li>
+                                                            <a href="#" class="fa fa-bookmark-o"></a>
+                                                        </li>
+                                                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="data">
+                                                    <div class="content">
+                                                        <span class="author">Jane Doe</span>
+                                                        <h1 class="title"><a href="#">Stranger Things: The sound of the
+                                                                Upside Down</a></h1>
+                                                        <p class="text">The antsy bingers of Netflix will eagerly
+                                                            anticipate
+                                                            the digital release of the
+                                                            Survive soundtrack, out today.</p>
+                                                        <a href="#" class="button">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">
+                                    <div class="example-1 card">
+                                        <div class="wrapper" id="card3">
+                                            <div class="date">
+                                                <span class="day">12</span>
+                                                <span class="month">Aug</span>
+                                                <span class="year">2016</span>
+                                            </div>
+                                            <div class="data">
+                                                <div class="content" id="card3text">
+                                                    <span class="author">Jane Doe</span>
+                                                    <h1 class="title"><a href="#">Boxing icon has the will for a couple
+                                                            more fights</a></h1>
+                                                    <p class="text">The highly anticipated world championship fight will
+                                                        take place at 10am and is
+                                                        the second major boxing blockbuster in the nation after 43
+                                                        years.</p>
+                                                    <label for="show-menu" class="menu-button"><span></span></label>
+                                                </div>
+                                                <input type="checkbox" id="show-menu" />
+                                                <ul class="menu-content">
+                                                    <li>
+                                                        <a href="#" class="fa fa-bookmark-o"></a>
+                                                    </li>
+                                                    <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+                                                    <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">
+                                    <div class="grid-item-inside">
+                                        <div class="example-2 card">
+                                            <div class="wrapper" id="card4">
+                                                <div class="header">
+                                                    <div class="date">
+                                                        <span class="day">12</span>
+                                                        <span class="month">Aug</span>
+                                                        <span class="year">2016</span>
+                                                    </div>
+                                                    <ul class="menu-content">
+                                                        <li>
+                                                            <a href="#" class="fa fa-bookmark-o"></a>
+                                                        </li>
+                                                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="data">
+                                                    <div class="content">
+                                                        <span class="author">Jane Doe</span>
+                                                        <h1 class="title"><a href="#">Stranger Things: The sound of the
+                                                                Upside Down</a></h1>
+                                                        <p class="text">The antsy bingers of Netflix will eagerly
+                                                            anticipate
+                                                            the digital release of the
+                                                            Survive soundtrack, out today.</p>
+                                                        <a href="#" class="button">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">
+                                    <div class="grid-item-inside">
+                                        <div class="example-2 card">
+                                            <div class="wrapper" id="card4">
+                                                <div class="header">
+                                                    <div class="date">
+                                                        <span class="day">12</span>
+                                                        <span class="month">Aug</span>
+                                                        <span class="year">2016</span>
+                                                    </div>
+                                                    <ul class="menu-content">
+                                                        <li>
+                                                            <a href="#" class="fa fa-bookmark-o"></a>
+                                                        </li>
+                                                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="data">
+                                                    <div class="content">
+                                                        <span class="author">Jane Doe</span>
+                                                        <h1 class="title"><a href="#">Stranger Things: The sound of the
+                                                                Upside Down</a></h1>
+                                                        <p class="text">The antsy bingers of Netflix will eagerly
+                                                            anticipate
+                                                            the digital release of the
+                                                            Survive soundtrack, out today.</p>
+                                                        <a href="#" class="button">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">
+                                    <div class="grid-item-inside">
+                                        <div class="example-2 card">
+                                            <div class="wrapper" id="card4">
+                                                <div class="header">
+                                                    <div class="date">
+                                                        <span class="day">12</span>
+                                                        <span class="month">Aug</span>
+                                                        <span class="year">2016</span>
+                                                    </div>
+                                                    <ul class="menu-content">
+                                                        <li>
+                                                            <a href="#" class="fa fa-bookmark-o"></a>
+                                                        </li>
+                                                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="data">
+                                                    <div class="content">
+                                                        <span class="author">Jane Doe</span>
+                                                        <h1 class="title"><a href="#">Stranger Things: The sound of the
+                                                                Upside Down</a></h1>
+                                                        <p class="text">The antsy bingers of Netflix will eagerly
+                                                            anticipate
+                                                            the digital release of the
+                                                            Survive soundtrack, out today.</p>
+                                                        <a href="#" class="button">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">
+                                    <div class="grid-item-inside">
+                                        <div class="example-2 card">
+                                            <div class="wrapper" id="card4">
+                                                <div class="header">
+                                                    <div class="date">
+                                                        <span class="day">12</span>
+                                                        <span class="month">Aug</span>
+                                                        <span class="year">2016</span>
+                                                    </div>
+                                                    <ul class="menu-content">
+                                                        <li>
+                                                            <a href="#" class="fa fa-bookmark-o"></a>
+                                                        </li>
+                                                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="data">
+                                                    <div class="content">
+                                                        <span class="author">Jane Doe</span>
+                                                        <h1 class="title"><a href="#">Stranger Things: The sound of the
+                                                                Upside Down</a></h1>
+                                                        <p class="text">The antsy bingers of Netflix will eagerly
+                                                            anticipate
+                                                            the digital release of the
+                                                            Survive soundtrack, out today.</p>
+                                                        <a href="#" class="button">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">
+                                    <div class="grid-item-inside">
+                                        <div class="example-2 card">
+                                            <div class="wrapper" id="card4">
+                                                <div class="header">
+                                                    <div class="date">
+                                                        <span class="day">12</span>
+                                                        <span class="month">Aug</span>
+                                                        <span class="year">2016</span>
+                                                    </div>
+                                                    <ul class="menu-content">
+                                                        <li>
+                                                            <a href="#" class="fa fa-bookmark-o"></a>
+                                                        </li>
+                                                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="data">
+                                                    <div class="content">
+                                                        <span class="author">Jane Doe</span>
+                                                        <h1 class="title"><a href="#">Stranger Things: The sound of the
+                                                                Upside Down</a></h1>
+                                                        <p class="text">The antsy bingers of Netflix will eagerly
+                                                            anticipate
+                                                            the digital release of the
+                                                            Survive soundtrack, out today.</p>
+                                                        <a href="#" class="button">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">
+                                    <div class="example-1 card">
+                                        <div class="wrapper" id="card3">
+                                            <div class="date">
+                                                <span class="day">12</span>
+                                                <span class="month">Aug</span>
+                                                <span class="year">2016</span>
+                                            </div>
+                                            <div class="data">
+                                                <div class="content" id="card3text">
+                                                    <span class="author">Jane Doe</span>
+                                                    <h1 class="title"><a href="#">Boxing icon has the will for a couple
+                                                            more fights</a></h1>
+                                                    <p class="text">The highly anticipated world championship fight will
+                                                        take place at 10am and is
+                                                        the second major boxing blockbuster in the nation after 43
+                                                        years.</p>
+                                                    <label for="show-menu" class="menu-button"><span></span></label>
+                                                </div>
+                                                <input type="checkbox" id="show-menu" />
+                                                <ul class="menu-content">
+                                                    <li>
+                                                        <a href="#" class="fa fa-bookmark-o"></a>
+                                                    </li>
+                                                    <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+                                                    <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">
+                                    <div class="grid-item-inside">
+                                        <div class="example-2 card">
+                                            <div class="wrapper" id="card4">
+                                                <div class="header">
+                                                    <div class="date">
+                                                        <span class="day">12</span>
+                                                        <span class="month">Aug</span>
+                                                        <span class="year">2016</span>
+                                                    </div>
+                                                    <ul class="menu-content">
+                                                        <li>
+                                                            <a href="#" class="fa fa-bookmark-o"></a>
+                                                        </li>
+                                                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                                                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="data">
+                                                    <div class="content">
+                                                        <span class="author">Jane Doe</span>
+                                                        <h1 class="title"><a href="#">Stranger Things: The sound of the
+                                                                Upside Down</a></h1>
+                                                        <p class="text">The antsy bingers of Netflix will eagerly
+                                                            anticipate
+                                                            the digital release of the
+                                                            Survive soundtrack, out today.</p>
+                                                        <a href="#" class="button">Read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="news-body-container">
+                        <div class="linkgrid">
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">Test1</div>
+                            </div>
+
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">Test2</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">Test3</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">Test4</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">Test5</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">Test6</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">Test7</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">Test8</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">Test9</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">Test10</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">Test11</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">Test12</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">Test13</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">Test14</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="news-body-container">
+                        <div class="linkgrid">
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">Test1</div>
+                            </div>
+
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">Test2</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">Test3</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">Test4</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">Test5</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">Test6</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">Test7</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">Test8</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">Test9</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">Test10</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-1">
+                                <div class="grid-item-inside">Test11</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">Test12</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-2">
+                                <div class="grid-item-inside">Test13</div>
+                            </div>
+
+                            <div class="grid-item grid-item-height-3">
+                                <div class="grid-item-inside">Test14</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <section id="first-tab-group" class="tabgroup">
+                <div class="news-body-mid" id="tab1">
+                    
+                </div>
+                <div class="news-body-mid" id="tab2">
+                    
+                </div>
+            </section>-->
+        </div>
+        <div class="horizontal_line-news-2"></div>
+        <div class="news-body_bottom">
+            <h1 class="news-body_bottom-title">Discover More</h1>
+            <div class="events-body_bottom-carsoul-container">
+                <div class="events-body_bottom-carsoul-box">
+                    <div class="events-body_bottom-imgBx">
+                        <img src="./aphrodite_img/events-img/events-carsoul-img/events-carsoul-1.jpg">
+                    </div>
+                    <div class="events-body_bottom-content">
+                        <h2>Vintage pinups from the 1950s & 19600s</h2>
+                        <p>By Lorna Carroll & Photos by Bob Moreland – Tampa Bay Times (Florida) December 30, 1962
+
+                            A dewy-eyed, curvacious lovely smiles sensuously from your new 1963 calendar. </p>
+                        <a class="events-body_bottom-content-title" href="#">
+                            <span class="events-body_bottom-content-title-text">Read more</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="events-body_bottom-carsoul-box">
+                    <div class="events-body_bottom-imgBx">
+                        <img src="./aphrodite_img/events-img/events-carsoul-img/events-carsoul-2.jpg">
+                    </div>
+                    <div class="events-body_bottom-content">
+                        <h2>By Joseph Christian Leyendecker (1874-1951)</h2>
+                        <p>Joseph Christian Leyendecker was a German-American illustrator. He is considered to be one of
+                            the preeminent American illustrators of the early 20th century.</p>
+                        <a class="events-body_bottom-content-title" href="#">
+                            <span class="events-body_bottom-content-title-text">Read more</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="events-body_bottom-carsoul-box">
+                    <div class="events-body_bottom-imgBx">
+                        <img src="./aphrodite_img/events-img/events-carsoul-img/events-carsoul-3.jpg">
+                    </div>
+                    <div class="events-body_bottom-content">
+                        <h2>Vase de Fleurs, 1701 by Rachel Ruysch</h2>
+                        <p>Rachel Ruysch (The Hague, 3 June 1664 – Amsterdam, 12 October 1750)[1] was a still-life
+                            painter from the Northern Netherlands. She specialized in flowers, inventing her own style
+                            and achieving international fame in her lifetime. </p>
+                        <a class="events-body_bottom-content-title" href="#">
+                            <span class="events-body_bottom-content-title-text">Read more</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="events-body_bottom-carsoul-box">
+                    <div class="events-body_bottom-imgBx">
+                        <img src="./aphrodite_img/events-img/events-carsoul-img/events-carsoul-4.jpeg">
+                    </div>
+                    <div class="events-body_bottom-content">
+                        <h2>The nursery rhyme Ring a Ring o Rosie</h2>
+                        <p>Ring a Ring o Rosie isn’t about the plague, Mary Mary Quite Contrary isn’t about Queen Mary
+                            and Humpty Dumpty wasn’t a cannon used during the English Civil War.</p>
+                        <a class="events-body_bottom-content-title" href="#">
+                            <span class="events-body_bottom-content-title-text">Read more</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Newsletter:</h2>
+                        <p>Write your email address here and we’ll keep you up to date with an occasional email.</p>
+                        <form action="" method="POST">
+                            <input type="email" name="email" id="1234"><input type="submit" value="Subscribe">
+                        </form>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"><i
+                                            class="fab fa-facebook"></i></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"><i
+                                            class="fab fa-twitter"></i></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"><i
+                                            class="fab fa-instagram"></i></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-2 ml-md-4">
+                        <h2 class="ftco-heading-2">About The Aphrodite</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Blog</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Youtube</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>RSS</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Press</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">The Aphrodite <br>Fifth Avenue</h2>
+                        <p>
+                            1000<br> Fifth Avenue
+                            New York,<br> NY 10028
+                            Phone:<br> 212-535-7710
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-6">
+                        <h2 class="ftco-heading-2">Holiday Hours</h2>
+                        <p>Tuesday, Dec. 24, Christmas Eve — Closed<br>
+                            Wednesday, Dec. 25, Christmas — Closed<br>
+                            Thursday, Dec. 26 to Sunday, Dec. 29 — Open 12:00–5:00 PM
+                        </p>
+                        <div class="block-23 mb-3">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p> &copy;<script type="document.write(newDate().getFullYear());"></script>2020 The Trustees of the
+                        Aphrodite online Museum</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        angular.module('app', ['cfp.hotkeys', 'ngAnimate'])
+            .controller('MainController', function ($scope, hotkeys) {
+
+                // functions
+                $scope.active = 0;
+
+                $scope.previous = function () {
+                    if ($scope.active != 0) $scope.active -= 1;
+                }
+
+                $scope.next = function () {
+                    if ($scope.active + 1 < $scope.forests.length) $scope.active += 1;
+                }
+
+                $scope.setActive = function (i) {
+                    $scope.active = i;
+                }
+
+                $scope.forests = [{
+                        'rank': 1,
+                        'name': 'Making Marvels: Splendor at Europe',
+                        'desc': 'Between 1550 and 1750, nearly every royal family in Europe assembled vast collections of valuable and entertaining objects. Many princes also believed that the possession of artistic and technological innovations conveyed status, and these objects were often prominently showcased in elaborate court entertainments, which were characteristic of the period.',
+                        'location': 'New York, American',
+                        'img': './aphrodite_img/news/carsoul1/ia_100000003170.jpg'
+                    },
+                    {
+                        'rank': 2,
+                        'name': 'Giant Sequoia National Monument',
+                        'desc': 'Located in the southern Sierra Nevada mountains of California. The forest is named for the majestic Giant Sequoia  trees which populate 38 distinct groves within the boundaries of the forest. The Sequoia National Forest covers 4,829 sq km (1,865 sq mi).',
+                        'location': 'California, United States',
+                        'img': './aphrodite_img/news/carsoul1/ia_100000003240.jpg'
+                    },
+                    {
+                        'rank': 3,
+                        'name': 'Redwood National Park',
+                        'desc': 'Also in California, The Redwood National parks is a combination of four parks that together protect 45% of all remaining coast redwood (Sequoia sempervirens) old-growth forests, totaling at least 158 square km. These trees are the tallest and one of the most massive tree species on Earth.',
+                        'location': 'California, United States',
+                        'img': './aphrodite_img/news/carsoul1/ia_200000011.jpg'
+                    },
+                    {
+                        'rank': 4,
+                        'name': 'Black Forest',
+                        'desc': 'Schwarzwald or “Black Forest” is a wooded mountain range in Baden-Württemberg, southwestern Germany. It is bordered by the Rhine valley to the west and south. The name “Black Forest” was given by the Romans who referred to the forest blocking out most of the sunlight from getting inside the forest by the dense growth of conifers.',
+                        'location': 'Germany',
+                        'img': './aphrodite_img/news/carsoul1/ia_100000003129.jpg'
+                    },
+                    {
+                        'rank': 5,
+                        'name': 'Crooked Forest',
+                        'desc': 'A grove of oddly-shaped pine trees. This young forest was planted around 1930 and has about 400 pines. It is generally believed that some form of human tool or technique was used to make the trees grow this way, but the method and motive are not currently known. Some believe that the woods were deliberately grown this way to make “Compass Timbers”, or trees that are deliberately shaped for the purpose of using those odd shapes in ship building. Another theory is that tanks from WWII are the cause, rolling over the young trees snapping the stem, but still surviving, forcing them to grow in the direction they were ran over.',
+                        'location': 'Poland',
+                        'img': './aphrodite_img/news/carsoul1/ia_100000003170.jpg'
+                    }
+                ];
+
+                // hot keys
+                hotkeys.add({
+                    combo: 'right',
+                    description: 'Next slide',
+                    callback: function () {
+                        $scope.next();
+                    }
+                });
+                hotkeys.add({
+                    combo: 'left',
+                    description: 'Previous slide',
+                    callback: function () {
+                        $scope.previous();
+                    }
+                });
+            }); //news head carsoul
+
+
+
+
+
+
+
+
+
+        /*$('.tabgroup > div').hide();
+        $('.tabgroup > div:first-of-type').show();
+        $('.tabs a').click(function (e) {
+            e.preventDefault();
+
+            $("#tab1, #tab2").addClass("hide_this");
+
+            if($(this).hasClass("active1")){
+                $("#tab1").removeClass("hide_this");
+            }
+
+            if($(this).hasClass("active2")){
+                $("#tab2").removeClass("hide_this");
+            }*/
+
+        var $this = $(this),
+            tabgroup = '#' + $this.parents('.tabs').data('tabgroup'),
+            others = $this.closest('li').siblings().children('a'),
+            target = $this.attr('href');
+        others.removeClass('active');
+        $this.addClass('active');
+        $(tabgroup).children('div').hide();
+        $(target).show();
+
+        //news-body-container
+
+
+
+
+        var _gaq = [
+            ['_setAccount', 'UA-11278966-1'],
+            ['_trackPageview']
+        ]; // Change UA-XXXXX-X to be your site's ID
+        (function (d, t) {
+            var g = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            g.async = 1;
+            g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g, s)
+        }(document, 'script'));
+    </script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.grid').masonry({
+                columnWidth: '.grid-item',
+                itemSelector: '.grid-item',
+                percentPosition: true
+            });
+        });
+    </script>
+</body>
+
+</html>
